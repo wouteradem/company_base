@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Config Importer module.
+ */
+
+/**
+ * Implements hook_config_ignore_settings_alter().
+ */
+function company_base_config_import_config_ignore_settings_alter(array &$settings) {
+  // If there is a profile set in the active configuration then add it to
+  // the config ignore list during the importing.
+  if ($profile = drupal_get_profile()) {
+    $settings[] = "core.extension:module.$profile";
+  }
+}

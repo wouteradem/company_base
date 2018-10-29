@@ -1,0 +1,7 @@
+services:
+  company_base_config_import.config_import_validate_subscriber:
+    class: Drupal\company_base_config_import\EventSubscriber\CompanyBaseConfigImportValidateSubscriber
+    decorates: config_import_subscriber
+    tags:
+      - { name: event_subscriber }
+    arguments: ['@theme_handler', '@profile_handler']

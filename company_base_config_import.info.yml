@@ -1,0 +1,5 @@
+name: Company Base Config Importer
+type: module
+description: Decorator for Config Importer.
+core: 8.x
+
